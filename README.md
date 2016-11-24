@@ -11,3 +11,15 @@ El fichero wemos_aemet_ntp_01.ino se conecta a una red wifi fija, y a partir de 
 También se conecta a aemet y lee datos meteorológicos de Zaragoza.
 A continuación envía por el puerto serie a la consola de arduino dichos datos.
 Usa la librería Time https://github.com/PaulStoffregen/Time comentada en http://playground.arduino.cc/code/time
+
+Mejoras:
+Usar WifiManager para seleccionar la red wifi
+Comparar librerías para el DHT22, porque de vez en cuando aparecían lecturas erróneas -999 y en el foro del repositorio comentaban alguna solución
+Comparar las medidas del DHT22 con otros sensores, entre ellos el BME280, y contrastar las medidas.
+Limpiar y organizar los programas. Estructurarlos en pestañas por tareas.
+Algunos trozos tienen muchos serial.print que me sirvieron para hacer debugging, pero quizás ahora se pueden quitar.
+Optimizar la memoria. Los textos estáticos pueden liberar memoria ram. Se pueden elegir mejor los tipos de variables y los nombres
+No hace falta leer los datos de aemet a piñón. Llamar a la subrrutina cada cierto tiempo, pero sin usar delay.
+Cómo leer los datos actuales en vez de la previsión?
+Tomar los datos de otra página?
+Alternar pantallas para mostrar los datos.
